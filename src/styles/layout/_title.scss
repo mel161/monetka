@@ -1,0 +1,47 @@
+.title {
+  // Style
+  display: block;
+  margin: 0;
+
+  // Media Queries
+  @media screen and (min-width: 1400px) {
+  }
+
+  // Modifiers
+  &--main {
+    // Style
+
+    // Media Queries
+    @media screen and (min-width: 1400px) {
+      margin: -94px -14px 0 0;
+    }
+  }
+
+  &--section {
+    // Style
+    line-height: 66px;
+
+    .section--result & {
+      padding-top: 89px;
+          margin-bottom: 52px;
+    }
+
+    // Media Queries
+    @media screen and (min-width: 1400px) {
+    }
+  }
+
+  &--content {
+    // Style
+    margin-bottom: 33px;
+
+    // Media Queries
+    @media screen and (min-width: 1400px) {
+    }
+
+    .slider & {
+      // width: calc(100% - 740px);
+      // float: right;
+    }
+  }
+}

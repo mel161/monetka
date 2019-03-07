@@ -1,0 +1,191 @@
+.image {
+  // Style
+
+  // Media Queries
+  @media screen and (min-width: 1400px) {
+  }
+
+  // Elements
+
+  // Modifiers
+  &--title {
+    // Style
+
+    // Media Queries
+    @media screen and (min-width: 1400px) {
+    }
+  }
+
+  &--object {
+    // Style
+    position: absolute;
+    z-index: 1;
+
+    // Media Queries
+    @media screen and (min-width: 1200px) {
+      &-1 {
+        top: -30px;
+        left: 28px;
+      }
+
+      &-2 {
+        top: 148px;
+        left: 275px;
+      }
+
+      &-3 {
+        top: 442px;
+        left: -410px;
+      }
+
+      &-4 {
+        left: 282px;
+        bottom: -33px;
+      }
+
+      &-5 {
+        bottom: 174px;
+        left: 603px;
+        z-index: 2;
+      }
+
+      &-6 {
+        bottom: -133px;
+        right: 677px;
+      }
+
+      &-7 {
+        bottom: 117px;
+        right: 414px;
+      }
+
+      &-8 {
+        bottom: -48px;
+        right: 210px;
+      }
+
+      &-9 {
+        bottom: 346px;
+        right: 0;
+      }
+
+      &-10 {
+        top: 232px;
+        right: 677px;
+      }
+
+      &-11 {
+        top: -30px;
+        right: 343px;
+      }
+
+      &-12 {
+        top: -40px;
+        left: 701px;
+      }
+
+      &-13 {
+        top: 0;
+        right: 288px;
+      }
+
+      &-14 {
+        top: -42px;
+        right: -17px;
+      }
+
+      &-15 {
+        bottom: 118px;
+        right: 191px;
+      }
+
+      &-16 {
+        bottom: -34px;
+        right: -74px;
+      }
+
+      &-17 {
+        bottom: -213px;
+        right: 599px;
+      }
+
+      &-18 {
+        bottom: 109px;
+        left: 492px;
+      }
+
+      &-19 {
+        bottom: -117px;
+        left: -80px;
+      }
+
+      &-20 {
+        top: 123px;
+        left: -141px;
+      }
+
+      &-21 {
+        top: 40px;
+        left: 419px;
+      }
+
+      &-22 {
+        top: 202px;
+        right: 539px;
+        z-index: 2;
+      }
+
+      &-23 {
+        top: -57px;
+        right: 306px;
+      }
+
+      &-24 {
+        top: 223px;
+        left: 168px;
+      }
+
+      &-25 {
+        bottom: 24px;
+        right: 184px;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+    }
+  }
+
+  &--tablet {
+    position: relative;
+
+    .tablet--slide & {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &--content {
+    position: absolute;
+    top: 37px;
+    left: 69px;
+
+    .tablet--slide & {
+      top: 27.2px;
+      left: 50px;
+      width: 640px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &--thanks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+    z-index: 1;
+  }
+}

@@ -1,0 +1,138 @@
+//! import google fonts
+// @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700');
+// OR use @font-face like below
+
+//! import a custom font below
+@font-face {
+  font-family: 'Muller';
+  font-display: fallback;
+  font-weight: bold;
+  font-style: normal;
+  src: url('fonts/MullerBold.woff2') format('woff2'), url('fonts/MullerBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-display: fallback;
+  font-weight: 300;
+  font-style: normal;
+  src: url('fonts/MullerLight.woff2') format('woff2'), url('fonts/MullerLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-display: fallback;
+  font-weight: normal;
+  font-style: normal;
+  src: url('fonts/MullerRegular.woff2') format('woff2'), url('fonts/MullerRegular.woff') format('woff');
+}
+
+//! set font variables
+$font-heading: 'Muller', serif;
+$font-body: $font-heading;
+
+html {
+  font-size: 62.5%; // 1rem = 10px, 3.5rem = 35px;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $black;
+  line-height: 1.2;
+}
+
+h1 {
+  font-family: $font-heading, serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.paragraph {
+  margin: 0 0 57px;
+
+  .section--result & {
+    margin: 0 0 29px;
+  }
+}
+
+.text {
+  line-height: inherit;
+  word-spacing: -2px;
+  letter-spacing: 0.37px;
+
+  // Modifiers
+
+  /* Uppercase */
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  /* Font Weight */
+  &--light {
+    font-weight: 300;
+  }
+
+  &--regular {
+    font-weight: normal;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  /* Text Sizes */
+  &--small {
+    font-size: $fz-small;
+  }
+
+  &--normal {
+    font-size: $fz-normal;
+  }
+
+  &--medium {
+    font-size: $fz-medium;
+  }
+
+  &--large {
+    font-size: $fz-large;
+  }
+
+  &--big {
+    font-size: $fz-big;
+  }
+
+  /* Color */
+  &--white {
+    color: $white;
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &--grey {
+    color: $grey;
+  }
+
+  &--light-grey {
+    color: $light-grey;
+  }
+
+  &--primary {
+    color: $color-primary;
+  }
+
+  &--secondary {
+    color: $color-secondary;
+  }
+
+  &--hide {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: transparent;
+  }
+}
