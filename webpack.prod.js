@@ -38,13 +38,6 @@ module.exports = merge(common, {
         quality: '90'
       })]
     }),
-    new FaviconsWebpackPlugin({
-      logo: './src/images/tris-package.svg',
-      icons: {
-        twitter: true,
-        windows: true
-      }
-    }),
     new OfflinePlugin()
   ]
 });

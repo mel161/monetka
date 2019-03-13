@@ -6,8 +6,13 @@ function addAnimateCSS(element, animationName) {
   $(element)
     .addClass('animated ' + animationName)
     .one(animationEnd, function() {
+      scrollInf();
       // $(element).removeClass('animated ' + animationName);
     });
+}
+
+function scrollInf() {
+  $('.tablet--first .image--content img').addClass('animate');
 }
 
 (function($) {
@@ -46,11 +51,47 @@ $(document).ready(function() {
     });
   });
 
-  $('.slider').slick({
-    rows: 0,
-    arrows: false,
-    dots: true
-  });
+  // $('.slider').slick({
+  //   rows: 0,
+  //   arrows: false,
+  //   dots: true
+  // });
+
+  const $slider = $('.slider');
+
+  $slider
+    .slick({
+      rows: 0,
+      arrows: false,
+      dots: true,
+      infinite: false,
+      slide: '.slider__item',
+      centerPadding: 0
+    })
+    .on('afterChange', (event, slick, currentSlide) => {
+      if (slick.$slides.length - 1 == currentSlide) {
+        mouseWheelReturn(slick)
+      }
+    });
+  function mouseWheel($slider) {
+    $(window).on('wheel', { $slider: $slider }, mouseWheelHandler);
+  }
+  function mouseWheelReturn($slider) {
+    if($slider.$slider.index() < 2) {
+      $(window).scrollTop($slider.$slider.next('.slider').attr('data-st') - $(document.body).attr('wh')/2)
+    }
+    $(window).off('wheel');
+  }
+  function mouseWheelHandler(event) {
+    event.preventDefault();
+    const $slider = event.data.$slider;
+    const delta = event.originalEvent.deltaY;
+    if (delta < 0) {
+      $slider.slick('slickPrev');
+    } else {
+      $slider.slick('slickNext');
+    }
+  }
 
   $(window).mousemove(function(e) {
     var change;
@@ -86,6 +127,9 @@ $(document).ready(function() {
       if (stEl >= st - wh && stEl < st + wh) {
         addAnimateCSS(element, $(element).attr('data-animation'));
         $(element).attr('data-emergence', 'visible');
+        if ($(element).hasClass('slider')) {
+          mouseWheel($(element));
+        }
       }
     });
   });

@@ -9,11 +9,11 @@ body {
 
 body {
   margin: 0;
-  width: calc(100% - 200px);
+  width: 100%;
   max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  margin-left: 200px;
+  margin: 0;
 }
 
 .page {
@@ -131,6 +131,21 @@ body {
   &--slide {
     position: relative;
     flex: 1 0 740px;
+    height: 534px;
+
+    .slider > & {
+      width: 740px;
+      position: absolute;
+      top: 0;
+    }
+
+    .slider[data-animation="slideInRight"] > & {
+      left: 0;
+    }
+
+    .slider[data-animation="slideInLeft"] > & {
+      right: 100px;
+    }
   }
 }
 
@@ -166,6 +181,10 @@ body {
   left: 800px;
   bottom: 55px;
 
+  .slider[data-animation="slideInLeft"] & {
+    left: 100px;
+  }
+
   li {
     width: 12px;
     height: 12px;
@@ -200,7 +219,7 @@ body {
   &__content {
     padding: 0 60px 0;
     margin: -20px 0 0;
-
+    
     .item--right & {
       padding-left: 0;
     }
