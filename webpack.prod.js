@@ -9,7 +9,6 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
-
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
@@ -18,7 +17,7 @@ module.exports = merge(common, {
       new TerserPlugin({
         test: /\.js(\?.*)?$/i,
         parallel: true,
-        sourceMap: true,
+        sourceMap: true
       })
     ]
   },
@@ -28,16 +27,33 @@ module.exports = merge(common, {
     }),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
-      gifsicle: { // lossless gif compressor
+      gifsicle: {
+        // lossless gif compressor
         optimizationLevel: 9
       },
-      pngquant: ({ // lossy png compressor, remove for default lossless
+      pngquant: {
+        // lossy png compressor, remove for default lossless
         quality: '90'
-      }),
-      plugins: [imageminMozjpeg({ // lossy jpg compressor, remove for default lossless
-        quality: '90'
+<<<<<<< HEAD
       })]
     }),
+=======
+      },
+      plugins: [
+        imageminMozjpeg({
+          // lossy jpg compressor, remove for default lossless
+          quality: '90'
+        })
+      ]
+    }),
+    // new FaviconsWebpackPlugin({
+    //   logo: './src/images/tris-package.svg',
+    //   icons: {
+    //     twitter: true,
+    //     windows: true
+    //   }
+    // }),
+>>>>>>> 021fe6eb67891cc19a49634a0b3816aa4739100c
     new OfflinePlugin()
   ]
 });
